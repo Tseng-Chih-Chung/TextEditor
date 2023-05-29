@@ -21,7 +21,7 @@ namespace TextEditor
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow()//這邊可以丟一些預設的東西
         {
             InitializeComponent();
             rtbText.Document.Blocks.Clear();// 清除rtbText(RichTextBox)的內容
@@ -53,7 +53,7 @@ namespace TextEditor
             }
         }
 
-        private void cmbFontFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void cmbFontFamily_SelectionChanged(object sender, SelectionChangedEventArgs e)//SelectionChanged是更改的事件    Selection是選取的東西
         {
 
             if (cmbFontFamily.SelectedItem != null)// 判斷式：必須要有選擇項目，才會做文字格式改變
@@ -67,6 +67,47 @@ namespace TextEditor
             if (cmbFontSize.SelectedItem != null)
             {
                 rtbText.Selection.ApplyPropertyValue(Inline.FontSizeProperty, cmbFontSize.SelectedItem);// 將rtbText豐富文字框所選的項目，套用所設定的字體大小
+            }
+        }
+
+        private void btnBold_Click(object sender, RoutedEventArgs e)
+        {
+            object temp = rtbText.Selection.GetPropertyValue(Inline.FontWeightProperty); // 取得你目前選取的文字，取得文字的字體粗細
+
+            if ((temp != DependencyProperty.UnsetValue) && (temp.Equals(FontWeights.Bold)))
+            {
+                rtbText.Selection.ApplyPropertyValue(FontWeightProperty, FontWeights.Normal);// 判斷：文字要有設定格式、設定為粗體，改變文字成為原來的粗細程度
+            }
+            else
+            {
+                rtbText.Selection.ApplyPropertyValue(FontWeightProperty, FontWeights.Bold);// 如果文字不是粗體，則改為粗體
+            }
+        }
+
+        private void btnItalic_Click(object sender, RoutedEventArgs e)
+        {
+            object temp = rtbText.Selection.GetPropertyValue(Inline.FontStyleProperty); // 取得你目前選取的文字，取得文字的字體樣式（斜體或非斜體）
+
+            if ((temp != DependencyProperty.UnsetValue) && (temp.Equals(FontStyles.Italic)))
+            {
+                rtbText.Selection.ApplyPropertyValue(FontStyleProperty, FontStyles.Normal); // 判斷：文字要有設定格式、設定為斜體，改變文字成為原來的正體
+            }
+            else
+            {
+                rtbText.Selection.ApplyPropertyValue(FontStyleProperty, FontStyles.Italic); // 如果文字為正體，則改為斜體
+            }
+        }
+
+        private void btnUnderline_Click(object sender, RoutedEventArgs e)
+        {
+            object temp = rtbText.Selection.GetPropertyValue(Inline.TextDecorationsProperty);// 取得你目前選取的文字，取得文字的字體樣式（字體裝飾）
+            if ((temp != DependencyProperty.UnsetValue) && (temp.Equals(TextDecorations.Underline)))
+            {
+                rtbText.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, null);// 判斷：文字要有設定格式、設定為底線，將文字移除底線
+            }
+            else
+            {
+                rtbText.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, TextDecorations.Underline); // 如果文字沒有底線，則增加底線
             }
         }
     }
