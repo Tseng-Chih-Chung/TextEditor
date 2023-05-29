@@ -62,7 +62,7 @@ namespace TextEditor
             }
         }
 
-        private void cmbFontSize_SizeChanged(object sender, SizeChangedEventArgs e)
+        private void cmbFontSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (cmbFontSize.SelectedItem != null)
             {

@@ -17,6 +17,6 @@
             <FlowDocument/>
         </RichTextBox>
         <ComboBox x:Name="cmbFontFamily" HorizontalAlignment="Left" Height="35" Margin="211,10,0,0" VerticalAlignment="Top" Width="302" SelectionChanged="cmbFontFamily_SelectionChanged"/>
-        <ComboBox x:Name="cmbFontSize" HorizontalAlignment="Left" Height="35" Margin="530,10,0,0" VerticalAlignment="Top" Width="59" SizeChanged="cmbFontSize_SizeChanged"/>
+        <ComboBox x:Name="cmbFontSize" HorizontalAlignment="Left" Height="35" Margin="530,10,0,0" VerticalAlignment="Top" Width="59" SelectionChanged="cmbFontSize_SelectionChanged"/>
     </Grid>
 </Window>
