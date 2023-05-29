@@ -11,12 +11,12 @@
         <Button x:Name="btnSave" Content="存檔" HorizontalAlignment="Left" Height="35" Margin="104,10,0,0" VerticalAlignment="Top" Width="89"/>
         <Button x:Name="btnBold" Content="B" HorizontalAlignment="Left" Height="29" Margin="615,16,0,0" VerticalAlignment="Top" Width="38" FontWeight="Bold" FontSize="20"/>
         <Button x:Name="btnItalic" Content="I" HorizontalAlignment="Left" Height="29" Margin="658,16,0,0" VerticalAlignment="Top" Width="38" FontSize="20" FontStyle="Italic" FontWeight="Bold"/>
-
+        <Button x:Name="btnUnderline" Content="U" HorizontalAlignment="Left" Height="29" Margin="701,16,0,0" VerticalAlignment="Top" Width="38" FontWeight="Bold" FontSize="20"/>
+        
         <RichTextBox x:Name="rtbText" HorizontalAlignment="Left" Height="360" Margin="10,50,0,0" VerticalAlignment="Top" Width="774">
             <FlowDocument/>
         </RichTextBox>
         <ComboBox x:Name="cmbFontFamily" HorizontalAlignment="Left" Height="35" Margin="211,10,0,0" VerticalAlignment="Top" Width="302"/>
         <ComboBox x:Name="cmbFontSize" HorizontalAlignment="Left" Height="35" Margin="530,10,0,0" VerticalAlignment="Top" Width="59"/>
-        <Button x:Name="btnUnderline" Content="U" HorizontalAlignment="Left" Height="29" Margin="701,16,0,0" VerticalAlignment="Top" Width="38" FontWeight="Bold" FontSize="20"/>
     </Grid>
 </Window>
